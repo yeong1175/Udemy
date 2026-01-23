@@ -30,8 +30,19 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 	FVector Start;
 	FVector End;
+	Start = GetComponentLocation();
+	End = Start + GetForwardVector() * Maxdistance;
 	DrawDebugLine(GetWorld(), Start, End, FColor::Red);
-
+	UE_LOG(LogTemp, Warning, TEXT("dfdfd") );
+	
+	FHitResult  HitResult;
+	GetWorld()->SweepSingleByChannel(
+		 HitResult,
+		 Start,
+		 End,
+		 FQuat::Identity,
+		 ECC_GameTraceChannel1);
 
 }
-
+	
+	

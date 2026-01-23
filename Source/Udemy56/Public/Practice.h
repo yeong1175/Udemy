@@ -42,7 +42,7 @@ bool returnning();
 //float Getdistance();
 float Getdistance()const;
 void  RotatePlate(float DeltaTime);
-UPROPERTY(EditAnywhere,Category="Rotation")
+UPROPERTY(EditAnywhere, Category = "Rotation");
 FRotator RotationSpeed;
 
 };
